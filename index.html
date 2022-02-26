@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Page Title -->
+    <title>Getaway Bloom - Home</title>
+    <!-- Linking MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Linking css stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-teal.min.css">
+
+    <!-- Linking fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- Linking main.js-->
+    <script type =  "text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body id="splashbackground">
+        <!-- NAVIGATION -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+            <!-- Title -->
+                <span class="mdl-layout-title">Getaway Bloom</span>
+                <img src="img/Logo_final.png">
+            </div>
+        </header>
+        <!-- Navigation Drawer -->
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Getaway Bloom</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html">Home</a>
+                    <a class="mdl-navigation__link" href="plan.html">New Vacation</a>
+                    <a class="mdl-navigation__link" href="vacationlist.html">My Vacations</a>
+                </nav>
+            </div>
+
+
+            <main class="mdl-layout__content">
+            <!-- PAGE CONTENT -->
+                <div class="page-content">
+                    <div class="content-grid mdl-grid">
+                        <div id="homeText" class="mdl-cell mdl-cell--5-col mdl-cell--1-offset mdl-cell--4-col-tablet mdl-cell--1-offset-tablet">
+                            <div class="mdl-grid--no-spacing">
+                                <h1 id="bigBlock">Everyone needs a break.<br>Are you ready to get away?</h1>
+                            </div>
+                            <div class="mdl-grid">
+                                <p id="p">Let us help!<br>Plan your route and discover incredible locations.</p>
+                            </div>
+                            <div class="mdl-grid">
+                                <button id="planButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="toPlan()">Plan Trip</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+
+
+#planButton{
+    width: 100%;
+    min-width: initial;
+    font-weight: bold;
+}
+
+#p{
+    font-size: 25px;
+    font-family: 'Lobster Two';
+    font-weight: 50;
+}
+
+#bigBlock, h1{
+    opacity: 1;
+    position: relative;
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+    font-size: 60px;
+}
+body{
+    background: #f7fcfc;
+    /* background-image: url(././img/splashpage.png); */
+}
+
+#planStartingLocation{
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 0px;
+}
+
+#homeText{
+    padding-top: 7%;
+}
+
+#inputPOI{
+    border: 1.5px solid;
+    border-radius: 7px;
+    margin: 10px 0px 0px;
+    border-color: #cccccc;
+}
+
+input[type="text"]:disabled, input[type="button"]:disabled{
+    background: #e6e6e6;
+}
+
+form{
+    text-align: center;
+    margin-left: 10%;
+    position: relative;
+}
+
+.mdl-typography--title{
+    color: #595959;
+}
+
+.dropdown-box{
+    height: 25px;
+}
+
+#map{
+    width: 95%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+.mdl-layout__content, .page-content, .content-grid{
+    height: 98%;
+}
+
+.mapboxgl-ctrl-geocoder--input{
+    text-align: left;
+}
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
+    border: 1.5px solid;
+    border-radius: 7px;
+    margin: 10px 0px 0px;
+    border-color: #cccccc;
+    align-self: center;
+    box-shadow: none;
+    z-index: 2;
+    min-width: 10%;
+    width: 100%;
+}
+.mdl-checkbox__ripple-container.mdl-js-ripple-effect.mdl-ripple--center{
+    vertical-align: middle;
+    padding: 0px;
+    z-index: -1;
+}
+.mdl-checkbox.mdl-checkbox{
+    z-index: 1;
+}
+
+.mapboxgl-marker:hover{
+    cursor: pointer;
+}
+
+.planSection.planSection{
+    border: 1px solid black;
+    margin-bottom: 7px;
+    padding: 10px 12px;
+}
+
+#planVacationTitle{
+    font-weight: bold;
+    font-size: 23px;
+    color: #262626;
+    margin-top: 3px;
+}
+
+.mapbox-popup-content{
+    padding: 7px 7px 10px;
+    font-size: 10px;
+}
+
+.pickPOI{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 0px 5px;
+    align-content: center;
+    justify-content: center;
+}
+
+.mdl-textfield .POIDropdown{
+    width: 90%;
+    margin-top: 7px;
+    position: relative;
+}
+
+select {
+    font-family: 'FontAwesome', 'Second Font name'
+  }
+
+.wrapper{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.wrapper .item{
+    background: #e6ffff;
+    color: black;
+    display: flex;
+    padding: 5px 17px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+
+div[disabled]{
+    pointer-events: none;
+    opacity: 0.6;
+    background: #e6e6e6;
+}
+.mdl-button .material-icons{
+    vertical-align: middle;
+}
+
+#listOfPOIs{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 138px;
+    padding: 0px;
+}
+
+.mdl-textfield.mdl-textfield{
+    padding: 17px 0px;
+}
+
+.mdl-button--fab.mdl-button--fab{
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.drag:hover{
+    cursor: grab;
+}
+
+.delete:hover{
+    cursor: pointer;
+}
+
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+#startingSectionCondensed{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#startingSectionCondensed p{
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+#POITypeDropdown, #POIArea{
+    padding: 0px;
+    margin-top: 15px;
+}
+
+#distanceLabel p{
+    padding: 0px;
+    margin: 0px;
+}
+
+img{
+    height: 60px;
+    width: 60px;
+}
+
+#addPOI{
+    position: relative;
+    margin-top: 10px;
+}
+
+#POIArea p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.card-buttons{
+    display: inline;
+}
+
+#pickPOISection{
+    padding-bottom: 0px;
+}
+
+.plan-button{
+    width: 32%;
+    text-align: center;
+}

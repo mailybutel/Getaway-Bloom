@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+  <head>
+    <!-- Page Title -->
+    <title>Getaway Bloom </title>
+    <!-- Linking MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Linking css stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-teal.min.css">
+    <!-- Link client's current services -->
+    <script src="https://eng1003.monash/libs/services.js"></script>
+    <script src="js/config.js"></script>
+
+  </head>
+
+  <body>
+      <!-- NAVIGATION -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+              <div class="mdl-layout__header-row">
+              <!-- Title -->
+                  <span class="mdl-layout-title">Getaway Bloom</span>
+                  <img src="img/Logo_final.png">
+                  <!-- Add spacer, to align navigation to the right -->
+                  <div class="mdl-layout-spacer"></div>
+              </div>
+          </header>
+          <!-- Navigation Drawer -->
+          <div class="mdl-layout__drawer">
+              <span class="mdl-layout-title">Getaway Bloom</span>
+              <nav class="mdl-navigation">
+                  <a class="mdl-navigation__link" href="index.html">Home</a>
+                  <a class="mdl-navigation__link" href="plan.html">New Vacation</a>
+                  <a class="mdl-navigation__link" href="vacationlist.html">My vacation</a>
+              </nav>
+          </div>
+
+
+          <main class="mdl-layout__content">
+          <!-- PAGE CONTENT -->
+              <div class="page-content">
+              <!-- Blank page for display-->
+                  <section class="section--right">
+                      <div id="vacationListContainer">
+                        <!-- Vacation list display -->
+
+                      </div>
+                  </section>
+              </div>
+          </main>
+      </div>
+      <script src="js/shared.js"></script>
+      <script src="js/vacationlist.js"></script>
+</body>
+</html>

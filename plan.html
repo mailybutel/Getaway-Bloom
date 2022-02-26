@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Page Title -->
+    <title>Getaway Bloom - Plan Vacation</title>
+    <!-- Link MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link css stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-teal.min.css">
+    <!-- Link Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- Link Mapbox Libraries -->
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <!-- Link client's current services -->
+    <script src="https://eng1003.monash/libs/services.js"></script>
+    <script src="js/config.js"></script>
+    <!-- dialog polyfill library -->
+    <link rel="stylesheet" href="css/dialog-polyfill.css" />
+    <script src="js/dialog-polyfill.js"></script>
+    
+</head>
+
+<body>
+    <!-- Geocoder plugin -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+    <!-- NAVIGATION -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                <!-- Title -->
+                    <span class="mdl-layout-title">Getaway Bloom</span>
+                    <img src="img/Logo_final.png">
+                    <!-- <span class="mdl-layout-title">Logo Placeholder</span> -->
+                </div>
+            </header>
+            <!-- Navigation Drawer -->
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Getaway Bloom</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html">Home</a>
+                    <a class="mdl-navigation__link" href="">New Vacation</a>
+                    <a class="mdl-navigation__link" href="vacationlist.html">My Vacations</a>
+                </nav>
+            </div>
+    
+    
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="content-grid mdl-grid">
+                        <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet">
+                            
+                            <form>
+                                
+                                <!-- Starting Point Entry -->
+                                <h4 class="mdl-typography--title" id="planVacationTitle">Plan Your Vacation</h4>
+                                <div class="planSection" id="startingSection">
+                                    <div class="mdl-textfield" id="planStartingLocation">
+                                        <label class="mdl-typography--title">Starting Location</label>
+                                    </div>
+                                    
+                                    <div id="planStartingLocation" class="geocoder mapbox-ctrl-geocoder"></div>
+                                    
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-currentLocation" onchange="useCurrentLocation()">
+                                        <input type="checkbox" id="checkbox-currentLocation" class="mdl-checkbox__input" aria-invalid="true" aria-describedby="vehicleError">
+                                        <span class="mdl-checkbox__label">Use current location</span>
+                                        <span id="vehicleError" class="mdl-textfield__error">Enter a valid location</span>
+                                    </label>
+
+                                    <!-- Vacation Vehicle Input -->
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="vehicleDropdown">
+                                        <label class="mdl-typography--title">Vacation Vehicle</label>
+                                        <select class="mdl-textfield__input dropdown-box" id="planVehicle">
+                                            <option value=""></option> <!-- default option should always be empty -->
+                                        </select>
+                                        <span id="vehicleError" class="mdl-textfield__error">Select a vehicle</span>
+                                    </div>
+
+                                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="saveStartingDetails()">Save Starting Details</button>
+                                </div>
+
+                                <div class="" id="startingSectionCondensed">
+
+                                </div>
+
+                                <div class="planSection" id="POISection" disabled>
+                                    <label class="mdl-typography--title">Points of Interest<br></label>
+                                    <!-- Section for list of POIs -->
+                                    <div class="wrapper">
+                                        <ul id="listOfPOIs">
+
+                                        </ul>
+                                    </div>
+
+
+                                    <!-- Points of Interest Inputs-->
+                                    <div class="mdl-textfield" id="pickPOISection">
+                                        <label class="mdl-typography--title">New Point of Interest<br></label>
+
+                                        <div class="pickPOI">
+
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label POIDropdown" id="POITypeDropdown">
+                                                <label class="mdl-selectfield__label" for="POIType">Point of Interest Type</label>
+                                                <select class="mdl-textfield__input dropdown-box" id="POIType">
+                                                    <option value=""></option> <!-- default option should always be empty -->
+                                                    <option value="tourism">Tourism</option>
+                                                    <option value="hotel">Accommodation</option>
+                                                    <option value="gas station">Gas Stations</option>
+                                                    <option value="food">Restaurants</option>
+                                                </select>
+                                                <span id="POITypeError" class="mdl-textfield__error">Select a POI Type</span>
+                                            </div>
+
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label POIDropdown" id="POIArea">                                              
+                                                <label for="POILocationOptions" class="mdl-selectfield__label">Point of Interest Area</label>
+                                                <p class="mdl-typography--body-1">Search an area or use map</p>
+                                            </div>
+
+                                            <div id="POISearch" class="geocoder mapbox-ctrl-geocoder"></div>
+                                            <!-- <input> -->
+                                            <br>
+                                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-button--disabled" id="addPOI" disabled onclick="showPOIs()">Show Nearest POIs</button>
+
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div id="distanceLabel">
+                                            <p class="mdl-typography--body-1">Total Distance: 0km   Vehicle Range Left: </p>
+                                    </div>
+                                    
+                                </div>
+
+                                <!-- Buttons -->
+                                <div id="planButtons">
+                                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored plan-button" onclick="cancelTrip()">Cancel</button>
+                                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored plan-button" onclick="clearAll()">Clear</button>
+                                    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored plan-button" onclick="saveTrip()">Save</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="mdl-cell mdl-cell--9-col mdl-cell--5-col-tablet">
+                            <div id="map">
+                                <!-- Map display -->
+                            </div>
+                        </div>
+                        <dialog class="mdl-dialog">
+                            <div class="mdl-dialog__content">
+                                <div>
+                                    <div class="mdl-textfield">
+                                        <label class="mdl-typography--title">Vacation Name</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" id="vacationName">
+                                        <label class="mdl-textfield__label" for="vacationName">Name...</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="mdl-textfield">
+                                        <label class="mdl-typography--title">Starting Date</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder">
+                                        <input class="mdl-textfield__input" type="date" id="vacationDate" placeholder="DD/MM/YYYY">
+                                        <label class="mdl-textfield__label" for="planStartingDate">Starting Date</label>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="closeDialog()">Cancel</button>
+                                        <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="saveToLS()">Save</button>        
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+                    </div>
+                </div>
+
+            </main>
+            <script src="js/shared.js"></script>
+            <script src="js/plan.js"></script>
+        </div>
+</body>
+</html>

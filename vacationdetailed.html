@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Page Title -->
+    <title>Getaway Bloom </title>
+    <!-- Linking MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Linking css stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-teal.min.css">
+    <!-- Link client's current services -->
+    <script src="https://eng1003.monash/libs/services.js"></script>
+    <script src="js/config.js"></script>
+    <!-- Link Mapbox Libraries -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+</head>
+    <body>
+        <!-- NAVIGATION -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Getaway Bloom</span>
+                    <img src="img/Logo_final.png">
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                </div>
+            </header>
+            <!-- Navigation Drawer -->
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Getaway Bloom</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html">Home</a>
+                    <a class="mdl-navigation__link" href="plan.html">New Vacation</a>
+                    <a class="mdl-navigation__link" href="vacationlist.html">My vacation</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <div class="content-grid mdl-grid">
+
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet" >
+                        <!-- General Vacation Detail -->
+                        <div>
+                            <!-- Vacation title -->
+                            <h4 id="vacationName"></h4>
+                        </div>
+                        <br>
+                        <div>
+                            <!-- Starting date -->
+                            <label>Starting date:</label>
+                            <label id="vacationDate"></label>
+                        </div>
+                        <br>
+                        <div>
+                            <h6>Route Details:</h6>
+                            <!-- Starting location -->
+                            <label>Starting location:</label>
+                            <label id="vacationStartingPoint"></label>
+                        </div>
+                        <br>
+                        <div>
+                            <!-- Route distance -->
+                            <label>Total distance:</label>
+                            <label id="vacationDistance"></label>
+                        </div>
+                        <br>
+                        <div>
+                            <!-- Number of Stops -->
+                            <label>Number of Stops:</label>
+                            <label id="vacationNumStops"></label>
+                        </div>
+                        <br>
+                        <div>
+                            <!-- Vehicle details -->
+                            <h6>Vehicle Details:</h6>
+                            <div>
+                                <label>Type:</label>
+                                <label id="vacationVehicle"></label>
+                            </div>
+                            <div>
+                                <label>Range:</label>
+                                <label id="vacationVehicleRange"></label>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <!-- Buttons -->
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="backToList()">Back</button>
+                            <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="deleteVacation()">Delete Trip</button>
+                        </div>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--9-col mdl-cell--4-col-tablet">
+                        <div id="map">
+                            <!-- Map display -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <script src="js/shared.js"></script>
+            <script src="js/vacationdetailed.js"></script>
+        </div>
+    </body>
+</html>
